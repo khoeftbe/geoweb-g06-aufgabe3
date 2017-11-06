@@ -1,5 +1,4 @@
 import 'ol/ol.css';
-import Map from 'ol/map';
 import View from 'ol/view';
 import TileLayer from 'ol/layer/tile';
 import Stamen from 'ol/source/stamen';
@@ -10,6 +9,7 @@ import Style from 'ol/style/style';
 import Text from 'ol/style/text';
 import Stroke from 'ol/style/stroke';
 import proj from 'ol/proj';
+import Map from 'ol/map';
 
 const map = new Map({
   target: 'map',
@@ -18,6 +18,7 @@ const map = new Map({
     zoom: 13
   })
 });
+
 map.addLayer(new TileLayer({
   source: new Stamen({
     layer: 'watercolor'
@@ -25,22 +26,22 @@ map.addLayer(new TileLayer({
 }));
 
 const layer = new VectorLayer({
-source: new Vector({
-url: 'data/map.geojson',
-format: new GeoJSON()
-})
+  source: new Vector({
+    url: 'data/map.geojson',
+    format: new GeoJSON()
+  })
 });
 map.addLayer(layer);
 
 layer.setStyle(function(feature) {
-return new Style({
-text: new Text({
-text: feature.get('name'),
-font: 'Bold 8pt Verdana',
-stroke: new Stroke({
-color: 'white',
-width: 3
-})
-})
-});
+  return new Style({
+    text: new Text({
+      text: feature.get('orte'),
+      font: 'Bold 13pt Calibri',
+      stroke: new Stroke({
+        color: 'white',
+        width: 3
+      })
+    })
+  });
 });
