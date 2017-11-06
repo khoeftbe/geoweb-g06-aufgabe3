@@ -1,3 +1,4 @@
+import 'ol/ol.css';
 import View from 'ol/view';
 import TileLayer from 'ol/layer/tile';
 import Stamen from 'ol/source/stamen';
