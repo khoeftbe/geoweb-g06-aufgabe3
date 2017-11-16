@@ -47,6 +47,6 @@
     "start": "webpack-dashboard -- webpack-dev-server",
     "lint": "eslint .",
     "test": "npm run lint",
-    "build": "webpack -- env=prod"
+    "build": "webpack --env=prod"
   }
 }
