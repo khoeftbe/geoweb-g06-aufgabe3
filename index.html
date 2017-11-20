@@ -1,19 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport"
-    content="initial-scale=1.0, user-scalable=no, width=device-width"
-    charset="utf-8">
-    <style> html, body,
-    .fullscreen {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-    </style>
-    <title>OpenLayers</title>
-  </head>
-  <body>
-    <div id="map" class="fullscreen"> </div>
-  </body>
+<!-- Metainformation: Dokumententyp HTML -->
+<!doctype html>
+
+<!-- Metainformation: Sprache=Deutsch -->
+<html lang="de">
+
+<!-- HEAD: Auch hier ist noch versteckte Information enthalten! -->
+<head>
+	<title>GRUPPE 06</title>	 <!-- Erscheint oben im Browsertab-Feld. -->
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8"> <!-- Sagt dem Browser, dass er es mit HTML zu tun hat und nach UTF-8 dekodieren soll. -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/geoweb/2017/g06/screen.css"> <!-- Verknuepfung mit SCSS Stylesheet. -->
+	<script src="/geoweb/2017/g06/menu.js"> </script> <!-- Verknüpfung mit JS Menü File. -->
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"> 	<!-- Vieport (im Browser verwendbarer Platz) soll vom User nicht 
+	veränderbar sein, dh kein individuelles Reinzoomen, das soll Openlayers machen. Anzeige soll so breit sein wie das Device. Befehl für Handy und Tablet Nutzung. -->
+
+<link href="style.css" rel="stylesheet"></head>
+
+<!-- BODY: Inhalt der Seite und Aufruf des Menüs, das aus dem JS File aufgebaut wird. -->
+<body onload="createMenu( 'main', 'ulnav' );">
+<!-- DIVISON: Unterteilt die Seite in mehrere Zonen (Header, Navigation, Content), 
+	deren Aussehen ich im CSS definieren kann. -->
+<!-- HEADER: Da steht unser Titel drin. -->
+	<div id="header" class="header">
+	GRUPPE 06
+	</div>
+
+<!-- NAVIGATION: Hier wird unser Menü aufgerufen! -->
+	<div id="navigation" class="navigation">
+		<ul id="ulnav" class="ulnav">
+		</ul>
+	</div>
+    <div id="map" class="fullscreen">
+	<p> Unsere Lieblingsorte... 
+	<input id="q" name="q" placeholder="Enter address here..." autocomplete="off" type="text">
+	</p>
+	</div>
+  <script type="text/javascript" src="main.c1207e61d49f90e16a25.js"></script><script type="text/javascript" src="main.287b21792183d27daf47.js"></script></body>
 </html>
+
+
