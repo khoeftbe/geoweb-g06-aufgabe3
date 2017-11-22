@@ -35,13 +35,15 @@ map.addLayer(new TileLayer({
 
 const layer = new VectorLayer({
   source: new Vector({
-    url: 'data/map.geojson',
+    url: 'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/projekt/postgis_geojson.php',
     format: new GeoJSON()
   })
 });
 map.addLayer(layer);
 
 layer.setStyle(function(feature) {
+  var properties = feature.getProperties ()
+  //if properties.typ == "fussball"
   return new Style({
     text: new Text({
       text: feature.get('name'),
@@ -50,8 +52,12 @@ layer.setStyle(function(feature) {
       color: 'white',
       width: 3
       })
+    }),
+    image: new IconStyle({
+      src: './data/marker3.png'
     })
   });
+  //else if...
 });
 
 function fit() {
@@ -116,4 +122,10 @@ new AutoComplete({
     });
     fit();
   }
+});
+map.on('singleclick', function(e) {
+  var pos = proj.toLonLat(e.coordinate);
+  window.location.href =
+'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/intranet/php_bsp6.php?pos=' +
+pos.join(' ');
 });
