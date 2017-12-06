@@ -28,7 +28,7 @@ const map = new Map({
 
 map.addLayer(new TileLayer({
   source: new Stamen({
-    layer: 'watercolor'
+    layer: 'toner'
   })
 }));
 
