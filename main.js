@@ -35,7 +35,7 @@ map.addLayer(new TileLayer({
 
 const layer = new VectorLayer({
   source: new Vector({
-    url: 'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/projekt/postgis_geojson.php',
+    url: 'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/karte/swf_postgis_geojson.php',
     format: new GeoJSON()
   })
 });
@@ -126,6 +126,6 @@ new AutoComplete({
 map.on('singleclick', function(e) {
   var pos = proj.toLonLat(e.coordinate);
   window.location.href =
-'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/intranet/php_bsp6.php?pos=' +
+'https://student.ifip.tuwien.ac.at/geoweb/2017/g06/karte/swf_form.php?pos=' +
 pos.join(' ');
 });
